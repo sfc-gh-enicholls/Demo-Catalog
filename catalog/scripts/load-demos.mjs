@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Projects the demo catalog from data/*.json into TEMP.PJOSE.CATALOG_DEMOS, which is
+// Projects the demo catalog from data/*.json into TEMP.ENICHOLLS.CATALOG_DEMOS, which is
 // what the Cortex Search service indexes — search services read tables and views, not
 // files.
 //
@@ -13,8 +13,8 @@
 import { execFileSync } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 
-const CONNECTION = 'Snowhouse';
-const TABLE = 'TEMP.PJOSE.CATALOG_DEMOS';
+const CONNECTION = 'sfcogsops-snowhouse_aws_us_west_2';
+const TABLE = 'TEMP.ENICHOLLS.CATALOG_DEMOS';
 // Rows per INSERT. Whole-file single statements risk one bad row losing everything.
 const BATCH = 20;
 

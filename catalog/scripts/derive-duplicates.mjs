@@ -20,7 +20,7 @@
 import { execFileSync } from 'node:child_process';
 import { readFile, writeFile } from 'node:fs/promises';
 
-const CONNECTION = 'Snowhouse';
+const CONNECTION = 'sfcogsops-snowhouse_aws_us_west_2';
 const ROLE = 'SALES_ENGINEER';
 const WAREHOUSE = 'SE_DASHBOARD_BIG_WH';
 const EMBED_MODEL = 'snowflake-arctic-embed-m-v1.5';

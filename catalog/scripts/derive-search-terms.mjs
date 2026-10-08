@@ -17,7 +17,7 @@
 import { execFileSync } from 'node:child_process';
 import { readFile, writeFile } from 'node:fs/promises';
 
-const CONNECTION = 'Snowhouse';
+const CONNECTION = 'sfcogsops-snowhouse_aws_us_west_2';
 // The app's owner role has no AI access; these do. Nothing at runtime depends on
 // this choice — the only output is a file.
 const ROLE = 'SALES_ENGINEER';

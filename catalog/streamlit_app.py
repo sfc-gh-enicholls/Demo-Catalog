@@ -76,9 +76,9 @@ SPOTLIGHT_PIN = "SnowTelco-Live-Customer-Intelligence"
 HEADLINE_LIMIT = 95
 AUDIENCE_LIMIT = 72
 
-OWNER = "Pedro Jose · Snowflake"
-OWNER_EMAIL = "pedro.jose@snowflake.com"
-GITHUB_PROFILE = "https://github.com/pmjose"
+OWNER = "Emily Nicholls · Snowflake"
+OWNER_EMAIL = "emily.nicholls@snowflake.com"
+GITHUB_PROFILE = "https://github.com/sfc-gh-enicholls"
 # Says why access has to be asked for and what the answer will be. Deliberately does
 # not say "email me": the button directly beneath it already carries the mechanism, and
 # the note restating it was three lines spent on what one label already said.
@@ -98,7 +98,7 @@ REQUEST_MAILTO = "mailto:{}?subject={}&body={}".format(
         "When you need it by:\n"
     ),
 )
-TITLE = "Telco & AI Demo Catalog"
+TITLE = "Supply Chain Demo Catalog"
 # Deliberately does not claim telco only: the catalog spans 18 industries. What it
 # does say is how to get through it, which is the one thing a first-time reader needs.
 TAGLINE = (
@@ -109,14 +109,14 @@ TAGLINE = (
 # Sort option that only exists where the view log is reachable.
 MOST_USED = "Most used"
 # Must match the identifier in snowflake.yml — the app's own schema.
-VIEWS_TABLE = "TEMP.PJOSE.CATALOG_VIEWS"
-SEARCHES_TABLE = "TEMP.PJOSE.CATALOG_SEARCHES"
+VIEWS_TABLE = "TEMP.ENICHOLLS.CATALOG_VIEWS"
+SEARCHES_TABLE = "TEMP.ENICHOLLS.CATALOG_SEARCHES"
 # Also from snowflake.yml, and used to build shareable deep links into this app.
-APP_FQN = "TEMP.PJOSE.PROJECT_CATALOG"
+APP_FQN = "TEMP.ENICHOLLS.DEMO_CATALOG"
 # Owned by SALES_ENGINEER, not the app's role: creating a search service needs Cortex
 # embedding rights that DASHBOARD_SHARING_RL lacks. Search services run with owner's
 # rights, so the app queries it holding only USAGE.
-SEARCH_SERVICE = "TEMP.PJOSE.CATALOG_SEARCH"
+SEARCH_SERVICE = "TEMP.ENICHOLLS.CATALOG_SEARCH"
 # Cheapest model, used only to test whether Cortex is callable at all.
 PROBE_MODEL = "llama3.1-8b"
 # Drafting prose for a customer, so the strongest writer available here.

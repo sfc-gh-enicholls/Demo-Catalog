@@ -6,7 +6,7 @@
 import { readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
-const SEARCH_ROOTS = ['/Users/pjose/Documents/01 - GitHub', '/tmp/clones'];
+const SEARCH_ROOTS = ['/Users/enicholls/Documents/GitHub', '/tmp/clones'];
 
 const SKIP_DIRS = new Set([
   'node_modules', '.git', '.next', 'dist', 'build', 'out', '.venv', 'venv',

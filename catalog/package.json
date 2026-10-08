@@ -13,7 +13,7 @@
     "search-terms": "node scripts/derive-search-terms.mjs",
     "duplicates": "node scripts/derive-duplicates.mjs",
     "load-demos": "node scripts/load-demos.mjs",
-    "deploy": "snow streamlit deploy --connection Snowhouse --replace"
+    "deploy": "snow streamlit deploy --connection sfcogsops-snowhouse_aws_us_west_2 --replace"
   },
   "keywords": [],
   "author": "",

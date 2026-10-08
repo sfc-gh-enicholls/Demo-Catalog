@@ -298,7 +298,7 @@ async function main() {
     if (!existing) throw new Error(`--project-only needs data/${detailFile} to exist already.`);
     detail = existing;
   } else {
-    const owner = index.login ?? 'pmjose';
+    const owner = index.login ?? 'sfc-gh-enicholls';
     const data = await graphql({ owner, name });
     if (!data.repository) {
       throw new Error(

@@ -3,20 +3,20 @@ entities:
   catalog:
     type: streamlit
     identifier:
-      name: PROJECT_CATALOG
+      name: DEMO_CATALOG
       # TEMP is the Snowhouse database for shared dashboards: SNOWHOUSE_BASIC_RL
       # (every employee) already holds USAGE on it. The per-user schema follows the
       # established TEMP.<USERNAME> convention and is owned by DASHBOARD_SHARING_RL,
       # which is what lets us grant USAGE onward. A USER$ database cannot be shared.
       database: TEMP
-      schema: PJOSE
+      schema: ENICHOLLS
     runtime_name: SYSTEM$ST_CONTAINER_RUNTIME_PY3_11
     compute_pool: STREAMLIT_DEDICATED_POOL_L
     main_file: streamlit_app.py
     # Display name in Snowsight's app list, which is account-wide and crowded —
     # the app's own "Project catalog" heading is too generic to find there.
     # Kept here as well as SET via ALTER so a --replace deploy doesn't reset it.
-    title: Telco & AI Demo Catalog · Pedro Jose
+    title: Supply Chain Demo Catalog · Emily Nicholls
     # No query_warehouse: the app reads its content from the staged files below
     # and never issues SQL, so viewers need no warehouse grant.
     # No pyproject.toml: only stdlib + streamlit are imported, so PyPI
