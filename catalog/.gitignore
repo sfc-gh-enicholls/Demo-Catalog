@@ -19,3 +19,4 @@ data/
 # for any secrecy reason; regenerate with scripts/screenshot-pages.mjs and
 # scripts/screenshot-gallery.mjs.
 public/shots/
+.venv/

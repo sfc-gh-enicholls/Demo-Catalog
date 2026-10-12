@@ -114,7 +114,10 @@ function runSql(sql) {
   return execFileSync(
     'snow',
     [
-      'sql', '--connection', CONNECTION, '--format', 'JSON', '--stdin',
+      'sql', '--connection', CONNECTION,
+      // SNOW_AUTHENTICATOR=externalbrowser when the saved connection's OAuth flow cannot run from the CLI.
+      ...(process.env.SNOW_AUTHENTICATOR ? ['--authenticator', process.env.SNOW_AUTHENTICATOR] : []),
+      '--format', 'JSON', '--stdin',
       // Without this the CLI treats `&` and `{{ }}` in the demo text as its own
       // variable syntax and fails with "SQL rendering error" — every headline
       // containing "Data & AI" broke the batch.

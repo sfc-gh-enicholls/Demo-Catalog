@@ -32,7 +32,10 @@ function runSql(sql) {
   return execFileSync(
     'snow',
     [
-      'sql', '--connection', CONNECTION, '--format', 'JSON', '--stdin',
+      'sql', '--connection', CONNECTION,
+      // SNOW_AUTHENTICATOR=externalbrowser when the saved connection's OAuth flow cannot run from the CLI.
+      ...(process.env.SNOW_AUTHENTICATOR ? ['--authenticator', process.env.SNOW_AUTHENTICATOR] : []),
+      '--format', 'JSON', '--stdin',
       // `&` and `{{ }}` in demo text are otherwise read as the CLI's own variable
       // syntax and the statement dies with a bare "SQL rendering error".
       '--enable-templating', 'NONE',
@@ -138,7 +141,8 @@ CREATE TABLE IF NOT EXISTS ${TABLE} (
 COMMENT = 'Projection of data/*.json, indexed by the CATALOG_SEARCH Cortex Search service. Rebuilt by scripts/load-demos.mjs; the JSON files are the source of truth.';`;
 
   const cols = Object.keys(rows[0]);
-  const statements = [ddl, `TRUNCATE TABLE ${TABLE};`];
+  // The schema and this table belong to the app's owner role; CATALOG_SEARCH (SALES_ENGINEER) reads it.
+  const statements = ['USE ROLE DASHBOARD_SHARING_RL;', ddl, `TRUNCATE TABLE ${TABLE};`];
   for (let i = 0; i < rows.length; i += BATCH) {
     const values = rows
       .slice(i, i + BATCH)
